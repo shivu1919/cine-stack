@@ -4,6 +4,7 @@ import './App.css'
 function App() {
 
   const[count, setCount] = useState(0)
+ 
   const[movies, setMovies] = useState([
     {
     name:"The Sky Force",
@@ -57,20 +58,27 @@ function App() {
     }
 ])
 
+  const[selected, setSelected] = useState([])
+
   const addToWatchlist = (index) =>{
 
     if(movies[index].watchlist=='/remove.png'){
       setCount(count-1)
       movies[index].watchlist='/add.png'
       setMovies([...movies])
+
     }
     else{
       setCount(count+1)
       movies[index].watchlist='/remove.png'
       setMovies([...movies])
+      setSelected([...selected,movies[index]])
     }
+  }
 
-      
+
+  const showMovies = () =>{
+    console.log(selected)
   }
 
   return (
@@ -79,7 +87,7 @@ function App() {
         <div className='first'>
             <img src="/Capture.PNG" width="100"/>
             
-            <button id='watchlist-btn'>Watchlist : {count}</button>
+            <button id='watchlist-btn' onClick={()=>{showMovies()}}>Watchlist : {count}</button>
         </div>
         <br/>
        
@@ -88,7 +96,7 @@ function App() {
         <div className='second'>
 
           {movies.map((item,index)=>
-            <div id='movie'>
+            <div id='movie' key={index}>
             <img src={item.image} height="200" />
             <div id="watchlist">
               <p id="para">{item.name}</p>
@@ -100,8 +108,10 @@ function App() {
             </div>
           </div>
           )}
-        </div>
+        </div>       
     </div>
+
+
    </>
   )
 }

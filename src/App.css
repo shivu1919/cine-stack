@@ -33,6 +33,7 @@
 
 .second{
   display: flex;
+  padding-bottom: 20px;
   flex-wrap: wrap;
   align-items: center;
   row-gap: 15px;
@@ -70,3 +71,5 @@
 #watchlist-image{
   cursor: pointer;
 }
+
+
