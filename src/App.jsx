@@ -4,6 +4,7 @@ import './App.css'
 function App() {
 
   const[count, setCount] = useState(0)
+  const[cssName, setCssName] = useState('selected')
  
   const[movies, setMovies] = useState([
     {
@@ -78,7 +79,7 @@ function App() {
 
 
   const showMovies = () =>{
-    console.log(selected)
+    setCssName('visible')
   }
 
   return (
@@ -108,7 +109,18 @@ function App() {
             </div>
           </div>
           )}
-        </div>       
+        </div>  
+
+        <div className={cssName}>
+            <img 
+            src="/close.png" 
+            width="50" 
+            id="close-btn"
+            onClick={()=>{setCssName('selected')}}
+            />
+
+        </div>
+
     </div>
 
 

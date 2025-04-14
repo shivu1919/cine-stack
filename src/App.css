@@ -73,3 +73,23 @@
 }
 
 
+.selected{
+  display: none;
+}
+
+.visible{
+  width: 350px;
+  height: 500px;
+  background-color: rgba(114, 73, 218, 0.742);
+  position: absolute;
+  top:56%;
+  left: 50%;
+  transform: translate(-50% , -50%);
+  border: 1px solid black;
+  border-radius: 20px;
+}
+
+#close-btn{
+  cursor: pointer;
+}
+
