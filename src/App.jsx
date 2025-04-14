@@ -5,6 +5,8 @@ function App() {
 
   const[count, setCount] = useState(0)
   const[cssName, setCssName] = useState('selected')
+
+ 
  
   const[movies, setMovies] = useState([
     {
@@ -73,13 +75,14 @@ function App() {
       setCount(count+1)
       movies[index].watchlist='/remove.png'
       setMovies([...movies])
-      setSelected([...selected,movies[index]])
+      setSelected([...selected, movies[index]])
     }
   }
 
 
   const showMovies = () =>{
     setCssName('visible')
+    console.log(selected)
   }
 
   return (
@@ -114,12 +117,21 @@ function App() {
         <div className={cssName}>
             <img 
             src="/close.png" 
-            width="50" 
+            width="30" 
             id="close-btn"
             onClick={()=>{setCssName('selected')}}
             />
 
+            {selected.map((item,index)=>
+            <div key={index} id="s-movies"> 
+              <img src={item.image} width="25"/>
+              <h3>{item.name}</h3>
+            </div>
+            )}
         </div>
+
+         
+
 
     </div>
 

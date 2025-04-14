@@ -79,17 +79,36 @@
 
 .visible{
   width: 350px;
-  height: 500px;
+  height: 520px;
+  padding: 5px;
   background-color: rgba(114, 73, 218, 0.742);
   position: absolute;
   top:56%;
   left: 50%;
   transform: translate(-50% , -50%);
-  border: 1px solid black;
+  box-shadow: 5px 5px 3px black;
   border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 4px;
+  align-items: end;
+  justify-content: right;
+
 }
 
 #close-btn{
   cursor: pointer;
+  display: block;
+  
+}
+
+#s-movies{
+  background-color: white;
+  width: 100%;
+  display: flex;
+  column-gap: 15px;
+  padding: 2.5px 0 2.5px 10px;
+  align-items: center;
+  border-radius: 10px;
 }
 
