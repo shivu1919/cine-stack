@@ -70,7 +70,15 @@ function App() {
       movies[index].watchlist='/add.png'
       setMovies([...movies])
 
+      for(let i=0; i<selected.length;i++){
+        if(selected[i].name == movies[index].name){
+          selected.splice(i,1)
+          setSelected([...selected])
+        }
+      }
     }
+
+    
     else{
       setCount(count+1)
       movies[index].watchlist='/remove.png'
