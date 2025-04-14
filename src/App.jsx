@@ -5,7 +5,7 @@ function App() {
 
   const[count, setCount] = useState(0)
   const[cssName, setCssName] = useState('selected')
-
+  const[id, setId] = useState('')
  
  
   const[movies, setMovies] = useState([
@@ -90,12 +90,13 @@ function App() {
 
   const showMovies = () =>{
     setCssName('visible')
+    setId('main')
     console.log(selected)
   }
 
   return (
    <>
-    <div className='main'> 
+    <div className='main' id={id}> 
         <div className='first'>
             <img src="/Capture.PNG" width="100"/>
             
@@ -127,7 +128,10 @@ function App() {
             src="/close.png" 
             width="30" 
             id="close-btn"
-            onClick={()=>{setCssName('selected')}}
+            onClick={()=>{
+              setCssName('selected')
+              setId('')
+            }}
             />
 
             {selected.map((item,index)=>

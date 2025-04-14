@@ -1,7 +1,10 @@
 .main{
   width: 100vw;
   height: 100vh;
-  
+}
+
+#main{
+  overflow: hidden;
 }
 
 
@@ -78,6 +81,7 @@
 }
 
 .visible{
+  overflow: hidden;
   width: 350px;
   height: 520px;
   padding: 5px;
