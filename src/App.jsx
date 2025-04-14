@@ -6,6 +6,7 @@ function App() {
   const[count, setCount] = useState(0)
   const[cssName, setCssName] = useState('selected')
   const[id, setId] = useState('')
+  const[watchlist, setWatchList] = useState('watchlist-image')
  
  
   const[movies, setMovies] = useState([
@@ -90,6 +91,7 @@ function App() {
 
   const showMovies = () =>{
     setCssName('visible')
+    setWatchList('not-allowed')
     setId('main')
     console.log(selected)
   }
@@ -114,7 +116,7 @@ function App() {
             <div id="watchlist">
               <p id="para">{item.name}</p>
               <img 
-              id="watchlist-image" 
+              id={watchlist}
               src={item.watchlist} 
               width="25" 
               onClick={()=>{addToWatchlist(index)}}/>
@@ -131,6 +133,7 @@ function App() {
             onClick={()=>{
               setCssName('selected')
               setId('')
+              setWatchList('watchlist-image')
             }}
             />
 

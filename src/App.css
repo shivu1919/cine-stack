@@ -5,6 +5,12 @@
 
 #main{
   overflow: hidden;
+ 
+}
+
+
+#not-allowed{
+  pointer-events: none;
 }
 
 
